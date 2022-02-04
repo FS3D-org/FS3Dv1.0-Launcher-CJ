@@ -1,0 +1,23 @@
+{
+  "name": "fs3d-launcher",
+  "productName": "fs3d-launcher",
+  "description": "FS3D/Prepar3d Launcher",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "16192",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^16.0.2"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "electron-store": "^8.0.1",
+    "js2xmlparser": "^4.0.2",
+    "node-eval": "^2.0.0",
+    "xml-js": "^1.6.11",
+    "xml2js": "^0.4.23"
+  }
+}

@@ -1,0 +1,97 @@
+/*--------------------------------------
+		FS3D/Prepar3d Launcher
+		----------------------
+
+	Author: 	FS3D
+	Version:	0.5
+	Year:		2022
+
+--------------------------------------*/
+#controls{
+	width:100%;
+	height:360px;
+	overflow:hidden;
+	background:#111;
+}
+.control_row_header{
+	float:left;
+	text-align:left;
+	margin-top:3px;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:4px;
+	font-size:12px;
+}
+.control_row{
+	float:left;
+	width:100%;
+	height:24.5px;
+	margin:0;
+	padding:0;
+	background:#444444;
+	border-style:solid;
+	border-width:0 1px 1px 0;	
+	font-size:14px;
+}
+.control_row:nth-last-of-type(1){
+	border-width:0 1px 0 0;
+}
+.control_row_header{
+	background:#DD4444;
+}
+
+.control_row_field{
+	float:left;
+	text-align:left;
+	margin-right:5px;
+	margin-top:3px;
+	padding-top:4px;
+	padding-left:4px;
+	border-style:solid;
+	border-width: 0 1px 0 0;
+	border-color:#ddd;
+
+}
+.control_row_field:nth-of-type(1){
+	width:45%;
+	font-size:12px;
+	color:#DDDDDD;	
+}
+.control_row_field:nth-of-type(2){
+	width:18%;
+	font-size:11px;
+	color:#777777;
+}
+.control_row_field:nth-of-type(3){
+	width:18%;
+	font-size:11px;
+	color:#777777;
+}
+.control_row_field:nth-of-type(4){
+	width:10%;
+	border-width:0;
+}
+.control_row_header:nth-of-type(1){
+	width:46%;
+}
+.control_row_header:nth-of-type(2){
+	width:19%;
+}
+.control_row_header:nth-of-type(3){
+	width:19%;
+}
+.control_row_header:nth-of-type(4){
+	width:10%;
+	padding-right:16px;
+}
+
+.control_assign_button{
+	width:98%;
+	height:12px;
+	background:#77DD77;
+	border-radius:5px;
+	font-size:9px;
+	cursor:pointer;
+	text-align:center;
+	padding-top:2px;
+}

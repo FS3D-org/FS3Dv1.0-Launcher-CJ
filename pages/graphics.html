@@ -1,0 +1,37 @@
+<!--------------------------------------
+		FS3D/Prepar3d Launcher
+		----------------------
+
+	Author: 	FS3D
+	Version:	0.5
+	Year:		2022
+
+--------------------------------------->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link href="./../css/main.css" rel="stylesheet">
+    <link href="./../css/graphics.css" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <title>FS3D Launcher</title>
+  </head>
+  <body>
+    <div id="header"></div>
+	<div id="navigation">
+		<a href="scenario.html"><div class="navbutton"><div>Scenario</div></div></a>
+		<a href="aircraft.html"><div class="navbutton"><div>Aircraft</div></div></a>
+		<a href="controls.html"><div class="navbutton"><div>Controls</div></div></a>
+		<a href="graphics.html"><div class="navbutton nb_selected"><div>Graphics</div></div></a>
+	</div>
+	
+	<div id="launch_bar">
+		<div id="launch_button">LAUNCH</div>
+	</div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./../renderer.js"></script>
+  </body>
+</html>

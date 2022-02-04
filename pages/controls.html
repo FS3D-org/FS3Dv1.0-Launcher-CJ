@@ -1,0 +1,165 @@
+<!--------------------------------------
+		FS3D/Prepar3d Launcher
+		----------------------
+
+	Author: 	FS3D
+	Version:	0.5
+	Year:		2022
+
+--------------------------------------->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link href="./../css/main.css" rel="stylesheet">
+    <link href="./../css/controls.css" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <title>FS3D Launcher</title>
+  </head>
+  <body>
+    <div id="header"></div>
+	<div id="navigation">
+		<a href="scenario.html"><div class="navbutton"><div>Scenario</div></div></a>
+		<a href="aircraft.html"><div class="navbutton"><div>Aircraft</div></div></a>
+		<a href="controls.html"><div class="navbutton nb_selected"><div>Controls</div></div></a>
+		<a href="graphics.html"><div class="navbutton"><div>Graphics</div></div></a>
+	</div>
+	<div class="section">
+		<div class="section_header">CONTROLS</div>
+		<label for="current_controller" class="field_label">Currently Attached Controller</label>
+		<br />
+		<br />
+	</div>	
+	<div class="section">
+		<div class="section_header">PREPAR3D CONTROL MAPPING</div>
+		
+		<div id="controls">
+			<div class="control_row">
+				<div class="control_row_header">CONTROL</div>
+				<div class="control_row_header">JOYSTICK</div>
+				<div class="control_row_header">BUTTON/AXIS</div>
+				<div class="control_row_header">REASSIGN</div>		
+			</div>			
+			<div class="control_row" id="vr_upclick">
+				<div class="control_row_field">Click Up (In VR)</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>			
+			<div class="control_row" id="vr_downclick">
+				<div class="control_row_field">Click Down (In VR)</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>
+			<div class="control_row" id="drop_water">
+				<div class="control_row_field">Drop Retardant/Water</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>			
+			<div class="control_row" id="elevator_trim_down">
+				<div class="control_row_field">Elevator Trim (Pitch Down)</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>	
+			<div class="control_row" id="elevator_trim_up">
+				<div class="control_row_field">Elevator Trim (Pitch Up)</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>				
+			<div class="control_row" id="flaps_extend">
+				<div class="control_row_field">Flaps (Extend Incrementally)</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>			
+			<div class="control_row" id="flaps_retract">
+				<div class="control_row_field">Flaps (Retract Incrementally)</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>	
+			<div class="control_row" id="landing_gear">
+				<div class="control_row_field">Landing Gear (Extend/Retract)</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>				
+			<div class="control_row" id="pause">
+				<div class="control_row_field">Pause/Unpause</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>	
+			<div class="control_row" id="ptt">
+				<div class="control_row_field">Push To Talk (PTT)</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>				
+			<div class="control_row" id="slew">
+				<div class="control_row_field">Slew Mode Enable/Disable</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>	
+			<div class="control_row" id="speed_brakes">
+				<div class="control_row_field">Spoiler/Speed Brakes (Extend/Retract)</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>						
+			<div class="control_row" id="throttle_axis">
+				<div class="control_row_field">Throttle Axis</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">UNASSIGNED</div>
+				<div class="control_row_field">
+					<div class="control_assign_button">ASSIGN</div>
+				</div>			
+			</div>				
+		</div>
+	
+	
+	
+	
+	
+	
+	</div>
+	
+	<div id="launch_bar">
+		<div id="launch_button">LAUNCH</div>
+	</div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./../renderer.js"></script>
+  </body>
+</html>

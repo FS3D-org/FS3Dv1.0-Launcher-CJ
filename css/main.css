@@ -1,0 +1,141 @@
+/*--------------------------------------
+		FS3D/Prepar3d Launcher
+		----------------------
+
+	Author: 	FS3D
+	Version:	0.5
+	Year:		2022
+
+--------------------------------------*/
+html, body{
+	font-family:arial;
+	margin:0;
+	padding:0;
+	background:#1f1f1f;
+	background:url('../images/background.png');
+	color:white;
+	background-size:cover;
+	user-select:none;
+}
+a:link, a:visited, a:active, a:hover{
+	text-decoration:none;
+	color:white;
+}
+
+input:disabled{
+	background:#333333;
+}
+.input_enabled{
+	background:#DDDD77;
+	color:black;
+}
+.input_cleared{
+	background:#AAFFAA;
+}
+
+select:disabled{
+	background:#333333;
+}
+
+#header{
+	width:100%;
+	height:80px;
+	float:left;
+	background:url('../images/header.png');
+}
+#navigation{
+	width:100%;
+	height:60px;
+}
+.navbutton{
+	width:25%;
+	height:50px;
+	background:#428094;
+	float:left;
+	cursor:pointer;
+}
+.navbutton:hover, .nb_selected{
+	background:#1a6b7f;
+}
+.navbutton div{
+	width:100%;
+	padding-top:20px;
+	text-align:center;
+	font-size:14px;	
+}
+
+.section{
+	float:left;
+	margin-top:15px;
+	width:100%;
+	min-height:100px;
+	background:rgba(10,10,10,0.7);
+	clear:both;
+}
+
+.section_header{
+	text-align:center;
+	padding-top:5px;
+	padding-bottom:5px;
+	font-size:15px;
+	float:left;
+	width:100%;	
+	background:rgba(60,60,60,0.8);
+}
+.field_label{
+	float:left;
+	margin-left:10px;
+	font-size:12px;
+	margin-top:5px;
+	padding-top:8px;
+	width:100px;
+}
+.field{
+	width:410px;
+	margin-left:10px;
+	margin-top:5px;
+	height:25px;
+	border-radius:2px;
+	font-size:20px;
+	padding-left:5px;
+}
+
+.dropdown{
+	width:420px;
+	margin-left:10px;
+	margin-top:5px;
+	height:25px;
+	border-radius:2px;
+	font-size:20px;
+	padding-left:5px;
+}
+
+#launch_bar{
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	margin-top:10px;
+	height:100px;
+	background:rgba(40,40,40,1);
+}
+
+#launch_button{
+	float:left;
+	width:50%;
+	height:50px;
+	border-radius:5px;
+	margin-left:25%;
+	margin-top:15px;
+	text-align:center;
+	padding-top:15px;
+	font-size:32px;
+}
+
+.launch_disabled{
+	background:#333333;
+	color:#555555;
+}
+.launch_enabled{
+	background:#AAFFAA;
+	color:#333333;
+}
