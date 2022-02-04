@@ -27,8 +27,13 @@ window.FS3D.getData('settings').then(function(result){
 			if(fs3d_settings[setting][field] !== null){
 				target = document.getElementById(field);
 				target.value = fs3d_settings[setting][field];
-				target.classList.add("input_cleared");
-				target.disabled = false;
+				if(field === 'server' && fs3d_settings[setting][field] !== null){
+					server.classList.add('input_cleared');
+				}
+				if(field === 'scenario' && fs3d_settings[setting][field] !== null){
+					scenario.disabled = false;
+					scenario.classList.add('input_cleared');
+				}
 			}
 		}
 	}
