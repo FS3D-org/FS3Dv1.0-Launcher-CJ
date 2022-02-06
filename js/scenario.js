@@ -21,23 +21,37 @@ window.FS3D.getData('settings').then(function(result){
 	var aircraft = document.getElementById("aircraft");
 	var launch = document.getElementById("launch_button");
 	
-	//Load saved data if exists
-	for(setting in fs3d_settings){
-		for(field in fs3d_settings[setting]){
-			if(fs3d_settings[setting][field] !== null){
-				target = document.getElementById(field);
-				target.value = fs3d_settings[setting][field];
-				if(field === 'server' && fs3d_settings[setting][field] !== null){
-					server.classList.add('input_cleared');
-				}
-				if(field === 'scenario' && fs3d_settings[setting][field] !== null){
-					scenario.disabled = false;
-					scenario.classList.add('input_cleared');
-				}
-			}
+	var host = fs3d_settings.host;
+	if(host !== null){
+		switch(host.server){
+			case null:
+				server.selectedIndex = 0;
+				ip.value = '';
+				port.value = '';
+				scenario.selectedIndex = 0;
+				ip.classList.remove('input_cleared');
+				ip.classList.remove('input_enabled');
+				port.classList.remove('input_cleared');
+				port.classList.remove('input_enabled');
+				scenario.classList.remove('input_cleared');
+				scenario.classList.remove('input_enabled');
+				ip.disabled = true;
+				port.disabled = true;
+				scenario.disabled = true;
+			break;
+			case 'Localhost':
+				server.selectedIndex = 1;
+				ip.value = host.ip;
+				ip.disabled = true;
+				console.log(host.port);
+				port.value = (host.port !== null) ? host.port: '';
+				port.disabled = false;
+				if(port.value == ''){port.classList.add('input_enabled');}
+				else{port.classList.add('input_cleared');}
+				//scenario.value = (host.scenario.value !== null) ? host.scenario.value: 'Please Choose A Scenario';
+			break;
 		}
 	}
-
 	function updateFields(enable, disable=[]){
 		for(field in enable){
 			enable[field].classList.remove("input_cleared");
