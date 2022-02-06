@@ -17,6 +17,7 @@
     "electron-store": "^8.0.1",
     "js2xmlparser": "^4.0.2",
     "node-eval": "^2.0.0",
+    "systeminformation": "^5.11.2",
     "xml-js": "^1.6.11",
     "xml2js": "^0.4.23"
   }

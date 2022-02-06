@@ -9,7 +9,6 @@
 --------------------------------------*/
 const {contextBridge, ipcRenderer} = require('electron');
 contextBridge.exposeInMainWorld('FS3D', {
-	getData: (source) => ipcRenderer.invoke('getData', source),
 	setData: (options) => ipcRenderer.invoke('setData', options),
 	showWarning: (options) => ipcRenderer.invoke('showWarning', options)
 })

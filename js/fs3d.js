@@ -7,51 +7,41 @@
 	Year:		2022
 
 --------------------------------------*/
+const settings = require('./settings.js');
 const io = require('./io.js');
 const url = require('url');
 const path = require('path');
 const fs = require('fs');
+const profiler = require('./profiler.js');
 
-const fs3d = {
-	settings:{
-		host:{
-			server:null,
-			ip:null,
-			port:null,
-			scenario:null,
-		},
-		player:{
-			name:null,
-			callsign:null,
-			role:null,
-			aircraft:null
+const fs3d_functions = {
+	init:new Promise(function(resolve, reject){
+		if(settings.debug){console.log('Running FS3D Init')};
+		var data = {
+			settings:{
+				host:{server:null,ip:null,port:null,scenario:null,},
+				player:{name:null,callsign:null,role:null,aircraft:null}
+			},
+			data:{fs3d:null,p3d:null,controls:null},
+			system:{cpu:null,memory:null,graphics:null,os:null}
 		}
-	},
-	data:{
-		fs3d:null,
-		p3d:null,
-		controls:null
-	},
-	init:function(){
-	
-		//Create temp output docs
-		
-		//Load controls into memory
-		fs3d.data.controls 	= io.getControlsFile();
-		
-		//Load existing P3D/FS3D settings into memory
-		fs3d.data.p3d 		= io.getConfigFile();
-		
-	},
+
+		Promise.all([io.getControlsFile, io.getConfigFile, profiler.init]).then((values) => {
+			data.controls = values[0];
+			data.p3d = values[1];
+			data.system = values[2];
+			console.log(data);
+			resolve(data);
+		});
+	}),
 	
 	setData:function(options){
 		for(entry in options){
 			entry = options[entry];
 			this.settings[entry.setting][entry.target] = entry.value;
 		}
-		console.log(this);
 	}
 	
 }
 
-module.exports = fs3d;
+module.exports = fs3d_functions;

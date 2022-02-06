@@ -14,20 +14,22 @@ const fs = require('fs');
 const xml2js = require('xml2js');
 const js2xmlparser = require('js2xmlparser');
 const io = {
-	
+
 	//Get %APPDATA%/Roaming/Lockheed Martin/Prepar3d v4/Controls/Standard.xml
-	getControlsFile: function(){
+	getControlsFile: new Promise(function(resolve, reject){
+		if(settings.debug){console.log('Reading Controls/Standard.xml')};
 		var control_object;
 		var controls_xml = fs.readFileSync(process.env.APPDATA + settings.controls_file,{encoding:'utf8'});		
 		var parser = new xml2js.Parser();
 		parser.parseString(controls_xml, function(err, result){
 			control_object = result;
 		});
-		return control_object;
-	},
+		resolve(control_object);
+	}),
 
 	//Get %APPDATA%/Roaming/Lockheed Martin/Prepar3d v4/Prepar3d.cfg file		
-	getConfigFile: function(){
+	getConfigFile: new Promise(function(resolve, reject){
+		if(settings.debug){console.log('Reading Prepar3d.cfg')};
 		var config_object = {};
 		var config_rows = fs.readFileSync(process.env.APPDATA + settings.config_file,{encoding:'utf16le'}).split("\n");
 		var current_section = '';
@@ -45,37 +47,8 @@ const io = {
 				config_object[current_section][property] = value;
 			}
 		}
-		return config_object;
-	},
-	
-	//Write %APPDATA%/Roaming/Lockheed Martin/Prepar3d v4/Prepar3d.cfg file		
-	writeConfigFile: function(source){
-		var path = process.env.APPDATA + settings.config_file;
-		if(fs.existsSync(path)){fs.unlinkSync(path);}
-		for(section in source){
-			fs.writeFileSync(path, '['+section+']\n', {flag: 'a+', encoding:'utf16le'});
-			for(property in source[section]){
-				fs.writeFileSync(path, property+"="+source[section][property]+'\n', {flag: 'a+', encoding:'utf16le'});
-			}
-		}
-	},	
-	
-	
-	
-	
-	
-	writeControlsFile: function(source, type){
-		file = null;
-		if(type == 'json'){
-			source = JSON.stringify(source);
-			file = 'Controls.json';
-		}
-		else{
-			file = 'Custom.xml';
-			source = js2xmlparser.parse("Root", source);
-		}
-		fs.writeFileSync('./files/'+file, JSON.stringify(source), {flag: 'a+'});
-	}
+		resolve(config_object);
+	})
 	
 }
 
