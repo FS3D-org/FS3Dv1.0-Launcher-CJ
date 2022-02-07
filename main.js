@@ -35,8 +35,8 @@ let aboutFS3DWindow;
 app.on('ready', function(){
 
 	splashWindow = new BrowserWindow({
-		width:settings.width,
-		height:settings.height,
+		width:560,
+		height:500,
 		transparent:true,
 		frame:false,
 		alwaysOnTop:true
