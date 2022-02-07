@@ -1,0 +1,25 @@
+html, body{
+	width:560px;
+	height:800px;
+	background:url('../images/splash.png');
+	color:white;
+	background-size:cover;
+	user-select:none;
+}
+#splash_loading{
+	width:200px;
+	height:200px;
+	position:absolute;
+	top:200px;
+	left:180px;
+	background:url('../images/pulse.gif');
+	background-size:cover;
+}
+#splash_message{
+	color:white;
+	font-size:18px;
+	position:absolute;
+	top:500px;
+	width:100%;
+	text-align:center;
+}
