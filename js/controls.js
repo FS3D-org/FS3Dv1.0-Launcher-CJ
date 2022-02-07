@@ -7,9 +7,3 @@
 	Year:		2022
 
 --------------------------------------*/
-const controls = {
-	
-	
-}
-
-module.exports = controls;

@@ -14,30 +14,22 @@ const menuTemplate = [
 			{
 				label: 'Use Last Config',
 				accelerator: 'Ctrl+L',
-				click(){
-					
-				}
+				click(){}
 			},		
 			{
-				label: 'Find Servers',
+				label: 'Rescan Hardware',
 				accelerator: 'Ctrl+S',
-				click(){
-					
-				}
+				click(){}
 			},
 			{
 				label: 'Reset To Default',
 				accelerator: 'Ctrl+D',
-				click(){
-					
-				}
+				click(){}
 			},
 			{
 				label: 'Quit',
 				accelerator: 'Ctrl+Q',
-				click(){
-					app.quit();
-				}
+				click(){app.quit();}
 			}			
 		]
 	},
@@ -71,5 +63,6 @@ const menuTemplate = [
 		]
 	}	
 ];
-	
+
+//Export menu
 module.exports = menuTemplate;

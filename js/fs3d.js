@@ -15,6 +15,9 @@ const fs = require('fs');
 const profiler = require('./profiler.js');
 
 const fs3d_functions = {
+
+	//Initialize the persistent FS3D object with default and
+	//preloaded values
 	init:new Promise(function(resolve, reject){
 		if(settings.debug){console.log('Running FS3D Init...')};
 		var data = {
@@ -33,6 +36,7 @@ const fs3d_functions = {
 		});
 	}),
 	
+	//Set the value of a property on the persistent FS3D object
 	setData:function(options){
 		for(entry in options){
 			if(settings.debug){console.log('Set data "'+entry+'" to '+options[entry])};

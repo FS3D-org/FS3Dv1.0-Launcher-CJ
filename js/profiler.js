@@ -1,8 +1,18 @@
+/*--------------------------------------
+		FS3D/Prepar3d Launcher
+		----------------------
+
+	Author: 	FS3D
+	Version:	0.5
+	Year:		2022
+
+--------------------------------------*/
 const settings = require('./settings.js');
 const fs3d = require('./fs3d.js');
 const sysinfo = require('systeminformation');
-
 const profiler = {
+
+    //Profile system - wait until all functions have run before returning
     init:new Promise(function(resolve, reject){
         if(settings.debug){console.log('Running System Profile...')};
         Promise.all([sysinfo.cpu(), sysinfo.mem(), sysinfo.graphics()]).then((values) => {
@@ -23,7 +33,7 @@ const profiler = {
             var displayMax = gcDisplay.reduce(function(a, b){return Math.max(a, b);},-Infinity);
             var display = graphics.displays[gcDisplay.indexOf(displayMax)];
 
-
+            //Set up output object to be assign to master fs3d object
             output.cpu = {
                 manufacturer:cpu.manufacturer,
                 brand:cpu.brand,
@@ -50,11 +60,9 @@ const profiler = {
 
     }),
 
+    //Set profile level based on specs (init must be run first)
     setProfile:function(){
         var profile = null;
-
-
-
         return profile;
     }
 }

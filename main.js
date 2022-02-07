@@ -34,6 +34,7 @@ let aboutFS3DWindow;
 //Run when app is ready
 app.on('ready', function(){
 
+//Create Splash Screen
 	splashWindow = new BrowserWindow({
 		width:560,
 		height:500,
@@ -77,6 +78,7 @@ app.on('ready', function(){
 			Menu.setApplicationMenu(mainMenu);
 		}
 
+		//Close splash screen and show main window
 		splashWindow.close();
 		mainWindow.show();
 	

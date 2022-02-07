@@ -6,9 +6,16 @@
 	Version:	0.5
 	Year:		2022
 
+	NOTE: This is the logic for the
+	scenario (display) page. Due to the
+	nature of node.js/electron, this page
+	does NOT talk with main.js directly. 
+	Access to main thread variables such
+	as "fs3d" must be established through
+	the preload.js script.
 --------------------------------------*/
 
-//Get all base data
+//Get all HTML elements
 var server = document.getElementById("server");
 var ip = document.getElementById("ip");
 var port = document.getElementById("port");
@@ -18,7 +25,8 @@ var callsign = document.getElementById("callsign");
 var role = document.getElementById("role");
 var aircraft = document.getElementById("aircraft");
 var launch = document.getElementById("launch_button");
-	
+
+//Update fields if data has already been set (ie switching tabs)	
 var host = fs3d_settings.host;
 if(host !== null){
 	switch(host.server){
@@ -50,6 +58,8 @@ if(host !== null){
 		break;
 	}
 }
+
+//Update field statuses
 function updateFields(enable, disable=[]){
 	for(field in enable){
 		enable[field].classList.remove("input_cleared");
@@ -57,18 +67,16 @@ function updateFields(enable, disable=[]){
 		enable[field].disabled = false;
 	}
 	for(field in disable){
-		if(disable[field].nodeName === 'SELECT'){
-			disable[field].selectedIndex = 0;
-		}
+		if(disable[field].nodeName === 'SELECT'){disable[field].selectedIndex = 0;}
 		disable[field].disabled = true;
 		disable[field].classList.remove("input_cleared");				
 		disable[field].classList.remove("input_enabled");				
 	}			
 }
 
-/*Enable player options - this is run after every field change
-	to validate that all server options have been filled out before
-	enabling the player section*/
+//Enable player options - this is run after every field change
+//to validate that all server options have been filled out before
+//enabling the player section
 function enablePlayerSettings(){
 
 	//Check that all required server fields have been completed first
@@ -90,20 +98,20 @@ function enablePlayerSettings(){
 	}
 		
 }
-	
+
+//This function is run after every field change in player info to see
+//if the minimum amount of data has been set to start FS3D
 function enableLaunch(){
 
 	//Check that all required player fields have been completed first
 	if(name.value !== '' && callsign.value !== '' && role.value !== 'Please Choose An Option' && aircraft.value !== 'Please Choose An Option'){
-			
 		launch.classList.remove('launch_disabled');
 		launch.classList.add('launch_enabled');
-
 	}
 		
 }	
 
-/*Handle server selection and subsequent server fields state*/
+//Handle server selection and subsequent server fields state
 server.addEventListener('change', () => {
 	var server_choice = server.options[server.selectedIndex].text;
 	switch(server_choice){
@@ -188,6 +196,7 @@ server.addEventListener('change', () => {
 	}		
 });
 
+//Run when IP has been set (or abandoned)
 ip.addEventListener('focusout', () => {
 	if(ip.value !== ''){
 		window.FS3D.setData([{setting:'host', target:'ip', value:ip.value}]);				
@@ -196,6 +205,7 @@ ip.addEventListener('focusout', () => {
 	}
 });
 
+//Run when port has been set (or abandoned)
 port.addEventListener('focusout', () => {
 	if(port.value !== ''){
 		window.FS3D.setData([{setting:'host', target:'port', value:port.value}]);					
@@ -203,6 +213,8 @@ port.addEventListener('focusout', () => {
 		enablePlayerSettings();
 	}
 });
+
+//Run when scenario dropdown has changed
 scenario.addEventListener('change', () => {
 	if(scenario.value !== 'Please Choose A Scenario' && scenario.value !== ''){
 		window.FS3D.setData([{setting:'host', target:'scenario', value:scenario.value}]);				
@@ -212,6 +224,7 @@ scenario.addEventListener('change', () => {
 	}
 });
 
+//Run when name has been set (or abandoned)
 name.addEventListener('focusout', () => {
 	if(name.value !== ''){
 		window.FS3D.setData([{setting:'player', target:'name', value:name.value}]);	
@@ -220,7 +233,8 @@ name.addEventListener('focusout', () => {
 	}
 	enableLaunch();
 });
-	
+
+//Run when callsign has been set (or abandoned)
 callsign.addEventListener('focusout', () => {
 	if(callsign.value !== ''){
 		window.FS3D.setData([{setting:'player', target:'callsign', value:callsign.value}]);	
@@ -230,7 +244,10 @@ callsign.addEventListener('focusout', () => {
 	enableLaunch();
 });	
 
+//Run when role dropdown has changed
 role.addEventListener('change', () => {
+
+	//If they have chosen Observer mode, prompt with warning about limitations
 	if(role.value == 'Observer'){
 		var warningOptions = {
 			title:'Observer Mode',
@@ -242,13 +259,12 @@ role.addEventListener('change', () => {
 		role.classList.remove("input_enable");
 		role.classList.add("input_cleared");
 	}
-	else{
-		role.value = null;
-	}
+	else{role.value = null;}
 	window.FS3D.setData([{setting:'player', target:'role', value:role.value}]);	
 	enableLaunch();		
 });
-	
+
+//Run when aircraft selection dropdown has changed
 aircraft.addEventListener('change', () => {
 	if(aircraft.value !== 'Please Choose An Option' && aircraft.value !== ''){
 		window.FS3D.setData([{setting:'player', target:'aircraft', value:aircraft.value}]);	

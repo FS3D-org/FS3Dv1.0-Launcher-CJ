@@ -6,12 +6,18 @@
 	Version:	0.5
 	Year:		2022
 
+	NOTE: This module provides functions
+	for building windows, dealing with alerts,
+	and so on. Most UI functionality should 
+	be defined here for consistency.
 --------------------------------------*/
 const {electron, dialog} = require('electron');
 var ui = {
 
+	//Functions dealing with windows
 	windows:{
 		
+		//Build help windows (separate popups)
 		helpWindow:function(windowName){
 			newWindow = new BrowserWindow({
 				width:480,
@@ -36,6 +42,7 @@ var ui = {
 			});	
 		},
 		
+		//Build popup warning.
 		showWarning: function(options){
 			dialog.showMessageBox({
 				type: 'none',
@@ -53,4 +60,5 @@ var ui = {
 
 }
 
+//Export ui
 module.exports = ui;

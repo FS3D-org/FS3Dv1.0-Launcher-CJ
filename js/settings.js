@@ -6,6 +6,13 @@
 	Version:	0.5
 	Year:		2022
 
+	NOTE: This is the main settings file
+	for the launcher. Anything that can be
+	changed here should not be changed 
+	elsewhere, as much of the functionality
+	depends on the settings object being
+	imported before anything else is.
+
 --------------------------------------*/
 const settings = {
 	version:'0.1',
@@ -18,4 +25,6 @@ const settings = {
 	resizable:true,
 	startpage:'scenario.html'
 }
+
+//Export settings
 module.exports = settings;
