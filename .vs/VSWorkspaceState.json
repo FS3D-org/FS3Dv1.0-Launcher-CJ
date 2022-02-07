@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\js"
+    "\\css",
+    "\\js",
+    "\\pages"
   ],
-  "SelectedNode": "\\js\\settings.js",
+  "SelectedNode": "\\css\\splash.css",
   "PreviewInSolutionExplorer": false
 }
