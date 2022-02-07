@@ -17,7 +17,7 @@ const io = {
 
 	//Get %APPDATA%/Roaming/Lockheed Martin/Prepar3d v4/Controls/Standard.xml
 	getControlsFile: new Promise(function(resolve, reject){
-		if(settings.debug){console.log('Reading Controls/Standard.xml')};
+		if(settings.debug){console.log('Loading Standard Controls...')};
 		var control_object;
 		var controls_xml = fs.readFileSync(process.env.APPDATA + settings.controls_file,{encoding:'utf8'});		
 		var parser = new xml2js.Parser();
@@ -29,7 +29,7 @@ const io = {
 
 	//Get %APPDATA%/Roaming/Lockheed Martin/Prepar3d v4/Prepar3d.cfg file		
 	getConfigFile: new Promise(function(resolve, reject){
-		if(settings.debug){console.log('Reading Prepar3d.cfg')};
+		if(settings.debug){console.log('Loading Prepar3d.cfg...')};
 		var config_object = {};
 		var config_rows = fs.readFileSync(process.env.APPDATA + settings.config_file,{encoding:'utf16le'}).split("\n");
 		var current_section = '';

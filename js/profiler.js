@@ -4,7 +4,7 @@ const sysinfo = require('systeminformation');
 
 const profiler = {
     init:new Promise(function(resolve, reject){
-        if(settings.debug){console.log('Running System Profile')};
+        if(settings.debug){console.log('Running System Profile...')};
         Promise.all([sysinfo.cpu(), sysinfo.mem(), sysinfo.graphics()]).then((values) => {
             var output = {cpu:null,memory:null,graphics:null};
             var cpu = values[0];
@@ -48,7 +48,15 @@ const profiler = {
             resolve(output);
         });
 
-    })
+    }),
+
+    setProfile:function(){
+        var profile = null;
+
+
+
+        return profile;
+    }
 }
 
 module.exports = profiler;

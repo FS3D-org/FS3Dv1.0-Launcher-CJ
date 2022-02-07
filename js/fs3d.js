@@ -16,7 +16,7 @@ const profiler = require('./profiler.js');
 
 const fs3d_functions = {
 	init:new Promise(function(resolve, reject){
-		if(settings.debug){console.log('Running FS3D Init')};
+		if(settings.debug){console.log('Running FS3D Init...')};
 		var data = {
 			settings:{
 				host:{server:null,ip:null,port:null,scenario:null,},
@@ -25,18 +25,17 @@ const fs3d_functions = {
 			data:{fs3d:null,p3d:null,controls:null},
 			system:{cpu:null,memory:null,graphics:null,os:null}
 		}
-
 		Promise.all([io.getControlsFile, io.getConfigFile, profiler.init]).then((values) => {
 			data.controls = values[0];
 			data.p3d = values[1];
 			data.system = values[2];
-			console.log(data);
 			resolve(data);
 		});
 	}),
 	
 	setData:function(options){
 		for(entry in options){
+			if(settings.debug){console.log('Set data "'+entry+'" to '+options[entry])};
 			entry = options[entry];
 			this.settings[entry.setting][entry.target] = entry.value;
 		}

@@ -34,14 +34,26 @@ let aboutFS3DWindow;
 //Run when app is ready
 app.on('ready', function(){
 
+	splashWindow = new BrowserWindow({
+		width:settings.width,
+		height:settings.height,
+		transparent:true,
+		frame:false,
+		alwaysOnTop:true
+	});
+	splashWindow.loadFile(path.join(__dirname, 'pages/splash.html'));
+	splashWindow.center();
+
 	//Initialize FS3D Data Objects
 	fs3d_functions.init.then(function(data){
+		if(settings.debug){console.log('Creating App Window...')};
 		var fs3d = data;
 
 		//Create App Window
 		mainWindow = new BrowserWindow({
 			width:settings.width,
 			height:settings.height,
+			show:false,
 			webPreferences:{preload: path.join(app.getAppPath(), 'preload.js')},
 			resizable:settings.resizable
 		});
@@ -64,6 +76,9 @@ app.on('ready', function(){
 			const mainMenu = Menu.buildFromTemplate(menu);
 			Menu.setApplicationMenu(mainMenu);
 		}
+
+		splashWindow.close();
+		mainWindow.show();
 	
 	});
 		
