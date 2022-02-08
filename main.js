@@ -48,14 +48,15 @@ app.on('ready', function(){
 	//Initialize FS3D Data Objects
 	fs3d_functions.init.then(function(data){
 		if(settings.debug){console.log('Creating App Window...')};
-		var fs3d = data;
 
 		//Create App Window
 		mainWindow = new BrowserWindow({
 			width:settings.width,
 			height:settings.height,
 			show:false,
-			webPreferences:{preload: path.join(app.getAppPath(), 'preload.js')},
+			webPreferences:{
+				preload: path.join(app.getAppPath(), 'preload.js')
+			},
 			resizable:settings.resizable
 		});
 	

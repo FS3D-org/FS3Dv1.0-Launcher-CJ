@@ -24,6 +24,11 @@ ipcMain.handle('showWarning', async (event, options) => {
 	ui.windows.showWarning(options);
 });
 
+//Get the state of the values on the persistent FS3D object
+ipcMain.handle('getData', async (event, options) => {
+	return fs3d;
+});
+
 //Set the state of a value on the persistent FS3D object
 ipcMain.handle('setData', async (event, options) => {
 	fs3d_functions.setData(options);

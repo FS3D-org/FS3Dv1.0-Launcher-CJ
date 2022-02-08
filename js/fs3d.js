@@ -16,6 +16,8 @@ const profiler = require('./profiler.js');
 
 const fs3d_functions = {
 
+	fs3d:null,
+
 	//Initialize the persistent FS3D object with default and
 	//preloaded values
 	init:new Promise(function(resolve, reject){
@@ -32,7 +34,8 @@ const fs3d_functions = {
 			data.controls = values[0];
 			data.p3d = values[1];
 			data.system = values[2];
-			resolve(data);
+			this.fs3d = data;
+			resolve(this.fs3d);
 		});
 	}),
 	
@@ -43,6 +46,11 @@ const fs3d_functions = {
 			entry = options[entry];
 			this.settings[entry.setting][entry.target] = entry.value;
 		}
+	},
+
+	getData:function(){
+		console.log(fs3d_functions.fs3d);
+		return 'test';
 	}
 	
 }
