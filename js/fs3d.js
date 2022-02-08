@@ -41,16 +41,12 @@ const fs3d_functions = {
 	
 	//Set the value of a property on the persistent FS3D object
 	setData:function(options){
+		var output = {settings:null};
 		for(entry in options){
 			if(settings.debug){console.log('Set data "'+entry+'" to '+options[entry])};
 			entry = options[entry];
-			this.settings[entry.setting][entry.target] = entry.value;
+			this.fs3d.settings[entry.setting][entry.target] = entry.value;
 		}
-	},
-
-	getData:function(){
-		console.log(fs3d_functions.fs3d);
-		return 'test';
 	}
 	
 }
