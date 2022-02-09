@@ -7,3 +7,20 @@
 	Year:		2022
 
 --------------------------------------*/
+#aircraft_left{
+	position:absolute;
+	top:120px;
+	width:270px;
+	height:430px;
+	background:red;
+
+}
+#aircraft_right{
+	position:absolute;
+	top:120px;
+	left:280px;
+	width:270px;
+	height:430px;
+	background:red;
+
+}

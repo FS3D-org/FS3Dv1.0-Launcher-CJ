@@ -17,6 +17,8 @@
   "dependencies": {
     "electron-store": "^8.0.1",
     "js2xmlparser": "^4.0.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
     "node-eval": "^2.0.0",
     "replace-in-file": "^6.3.2",
     "shelljs": "^0.8.5",

@@ -19,67 +19,69 @@
     <title>FS3D Launcher</title>
   </head>
   <body>
-    <div id="header"></div>
-	<div id="navigation">
-		<a href="scenario.html"><div class="navbutton nb_selected"><div>Scenario</div></div></a>
-		<a href="aircraft.html"><div class="navbutton"><div>Aircraft</div></div></a>
-		<a href="controls.html"><div class="navbutton"><div>Controls</div></div></a>
-		<a href="graphics.html"><div class="navbutton"><div>Graphics</div></div></a>
-	</div>
+    <video id="background_video" width="560" autoplay loop>
+        <source src="./../videos/background.mp4" type="video/mp4" />
+    </video>
+	<div id="content">
+		<div id="header"></div>
+		<div id="navigation">
+			<a href="scenario.html"><div class="navbutton nb_selected"><div>Scenario</div></div></a>
+			<a href="aircraft.html"><div class="navbutton"><div>Aircraft</div></div></a>
+			<a href="controls.html"><div class="navbutton"><div>Controls</div></div></a>
+			<a href="graphics.html"><div class="navbutton"><div>Graphics</div></div></a>
+		</div>
 	
-	<div class="section">
-		<div class="section_header">SERVER</div>
-		<label for="server" class="field_label">Choose Server</label>
-		<select id="server" class="dropdown input_enabled">
-			<option selected>Please Select A Server</option>
-			<option>Localhost</option>
-			<option>FS3D Official Server</option>
-			<option>Custom</option>
-		</select>
-		<label for="ip" class="field_label">Server IP Address</label>
-		<input type="text" id="ip" class="field" value="" disabled/>
-		<label for="port" class="field_label">Server Port</label>
-		<input type="text" id="port" class="field" value="" disabled/>
-		<label for="scenario" class="field_label">Scenario</label>
-		<select id="scenario" class="dropdown" disabled>
-			<option selected>Please Choose A Scenario</option>
-			<option>Silverado</option>
-			<option>Pinon</option>
-			<option>Aliso</option>
-			<option>Ridge</option>
-		</select>
-		<br />
-		<br />
+		<div class="section">
+			<div class="section_header">SERVER</div>
+			<label for="server" class="field_label">Choose Server</label>
+			<select id="server" class="dropdown input_enabled">
+				<option selected>Please Select A Server</option>
+				<option>Localhost</option>
+				<option>FS3D Official Server</option>
+				<option>Custom</option>
+			</select>
+			<label for="ip" class="field_label">Server IP Address</label>
+			<input type="text" id="ip" class="field" value="" disabled/>
+			<label for="port" class="field_label">Server Port</label>
+			<input type="text" id="port" class="field" value="" disabled/>
+			<label for="scenario" class="field_label">Scenario</label>
+			<select id="scenario" class="dropdown" disabled>
+				<option selected>Please Choose A Scenario</option>
+				<option>Silverado</option>
+				<option>Pinon</option>
+				<option>Aliso</option>
+				<option>Ridge</option>
+			</select>
+			<br />
+			<br />
+		</div>
+		<div class="section">
+			<div class="section_header">PLAYER</div>
+			<label for="name" class="field_label">Player Name</label>
+			<input type="text" id="name" class="field" value="" disabled/>
+			<label for="callsign" class="field_label">Call Sign</label>
+			<input type="text" id="callsign" class="field" value="" disabled/>
+			<label for="role" class="field_label">Role</label>
+			<select id="role" class="dropdown" disabled>
+				<option selected>Please Choose An Option</option>
+				<option>Air Attack</option>
+				<option>Tanker</option>
+				<option>Lead</option>
+				<option>Firefighter</option>
+				<option>Intel</option>
+				<option>Observer</option>
+				<option>Other</option>
+			</select>
+			<label for="aircraft" class="field_label">Aircraft</label>
+			<select id="aircraft" class="dropdown" disabled>
+				<option selected>Please Choose An Option</option>
+				<option>FS3D C-130H MAFFS</option>
+			</select>
+		</div>
+		<div id="launch_bar">
+			<div id="launch_button" class="launch_disabled">LAUNCH</div>
+		</div>
 	</div>
-	<div class="section">
-		<div class="section_header">PLAYER</div>
-		<label for="name" class="field_label">Player Name</label>
-		<input type="text" id="name" class="field" value="" disabled/>
-		<label for="callsign" class="field_label">Call Sign</label>
-		<input type="text" id="callsign" class="field" value="" disabled/>
-		<label for="role" class="field_label">Role</label>
-		<select id="role" class="dropdown" disabled>
-			<option selected>Please Choose An Option</option>
-			<option>Air Attack</option>
-			<option>Tanker</option>
-			<option>Lead</option>
-			<option>Firefighter</option>
-			<option>Intel</option>
-			<option>Observer</option>
-			<option>Other</option>
-		</select>
-		<label for="aircraft" class="field_label">Aircraft</label>
-		<select id="aircraft" class="dropdown" disabled>
-			<option selected>Please Choose An Option</option>
-			<option>FS3D C-130H MAFFS</option>
-		</select>
-		<br />
-		<br />
-	</div>
-	<div id="launch_bar">
-		<div id="launch_button" class="launch_disabled">LAUNCH</div>
-	</div>
-	
     <!-- You can also require other files to run in this process -->
     <script src="./../js/scenario.js"></script>
   </body>

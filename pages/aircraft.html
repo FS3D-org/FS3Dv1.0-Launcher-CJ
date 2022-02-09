@@ -19,24 +19,31 @@
     <title>FS3D Launcher</title>
   </head>
   <body>
-    <div id="header"></div>
-	<div id="navigation">
-		<a href="scenario.html"><div class="navbutton"><div>Scenario</div></div></a>
-		<a href="aircraft.html"><div class="navbutton nb_selected"><div>Aircraft</div></div></a>
-		<a href="controls.html"><div class="navbutton"><div>Controls</div></div></a>
-		<a href="graphics.html"><div class="navbutton"><div>Graphics</div></div></a>
-	</div>
-	<div class="section">
-		<div class="section_header">SETTINGS</div>
+    <video id="background_video" autoplay loop>
+        <source src="./../videos/background.mp4" type="video/mp4" />
+    </video>
+	<div id="content">
+		<div id="header"></div>
+		<div id="navigation">
+			<a href="scenario.html"><div class="navbutton"><div>Scenario</div></div></a>
+			<a href="aircraft.html"><div class="navbutton nb_selected"><div>Aircraft</div></div></a>
+			<a href="controls.html"><div class="navbutton"><div>Controls</div></div></a>
+			<a href="graphics.html"><div class="navbutton"><div>Graphics</div></div></a>
+		</div>
+		<div id="aircraft_left" class="section">
+			<div class="section_header">Lockheed Martin C-130H</div>
+		
+		</div>
 
-	</div>
-
-	
-	<div id="launch_bar">
-		<div id="launch_button">LAUNCH</div>
-	</div>
-
+		<div id="aircraft_right" class="section">
+			test
+		
+		</div>	
+		<div id="launch_bar">
+			<div id="launch_button">LAUNCH</div>
+		</div>
+	<div>
     <!-- You can also require other files to run in this process -->
-    <script src="./../renderer.js"></script>
+    <script src="./../js/aircraft.js"></script>
   </body>
 </html>

@@ -8,6 +8,7 @@
 
 --------------------------------------*/
 /*Imports*/
+var mysql = require('mysql2');
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
@@ -30,6 +31,25 @@ let aboutAircraftWindow;
 let aboutControlsWindow;
 let aboutGraphicsWindow;
 let aboutFS3DWindow;
+
+// create the connection to database
+const connection = mysql.createConnection({
+  host: 'fs-3d.net',
+  user: 'fs3d',
+  port: 3306,
+  password:'3n#Es%!(M+FyzjCg',
+  database: 'FS3D'
+});
+
+// simple query
+connection.query(
+  'SELECT * FROM aircraft_data',
+  function(err, results, fields) {
+    console.log(err); // results contains rows returned by server
+    console.log(results); // results contains rows returned by server
+    console.log(fields); // fields contains extra meta data about results, if available
+  }
+);
 
 //Run when app is ready
 app.on('ready', function(){
