@@ -12,15 +12,33 @@
 	top:120px;
 	width:270px;
 	height:430px;
-	background:red;
+	background:rgba(10,10,10,0.7);
 
 }
 #aircraft_right{
 	position:absolute;
 	top:120px;
 	left:280px;
-	width:270px;
+	width:280px;
 	height:430px;
-	background:red;
-
+	background:rgba(10,10,10,0.7);
+}
+#aircraft_fuel{
+	height:170px;
+	width:100%;
+	background:blue;
+}
+#aircraft_payload{
+	height:260px;
+	width:100%;
+	background:blue;
+}
+#aircraft_graphic{
+	position:relative;
+	top:40px;
+	left:10px;
+	width:155px;
+	height:300px;
+	background:url('../images/plane.png');
+	background-size:cover;
 }

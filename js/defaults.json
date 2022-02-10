@@ -1,0 +1,42 @@
+const default_data = {
+
+	"p3d":{
+
+		//Prepar3d.cfg
+		"config":{
+			"AContain":{
+				"LabelDrawDistanceAir":100,
+				"LabelDrawDistanceGround":100,
+				"ShowLabelManufacturer":0,
+				"ShowLabelModel":0,
+				"ShowLabelAirlineAndFlightNumber":1,
+				"ShowLabelAirspeed":1,
+				"ShowLabelHeading":1,
+			},
+			"USERINTERFACE":{
+				"TextSize":3
+			}
+		},
+
+		//Controls/Standard.xml
+		"controls":{
+
+		},
+
+		//Aircraft.cfg
+		"aircraft":{
+
+		},
+
+		//Scenario XML
+		"scenario":{
+
+		}
+	},
+
+	"fs3d":{
+
+	}
+
+
+}

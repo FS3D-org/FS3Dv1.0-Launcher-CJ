@@ -3,8 +3,9 @@
     "",
     "\\css",
     "\\js",
-    "\\pages"
+    "\\pages",
+    "\\videos"
   ],
-  "SelectedNode": "\\pages",
+  "SelectedNode": "\\css\\scenario.css",
   "PreviewInSolutionExplorer": false
 }
