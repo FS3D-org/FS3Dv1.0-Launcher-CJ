@@ -7,3 +7,15 @@
 	Year:		2022
 
 --------------------------------------*/
+
+const websockets = {
+
+	getServer: function(){
+
+
+	}
+
+
+}
+
+module.exports = webosckets;

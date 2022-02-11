@@ -33,13 +33,14 @@ const io = {
 		var config_object = {};
 		var config_rows = fs.readFileSync(process.env.APPDATA + settings.config_file,{encoding:'utf16le'}).split("\n");
 		var current_section = '';
-		for(var i = 1; i < config_rows.length; i++){
-			if(config_rows[i].charAt(0) == '['){
+		console.log(config_rows);
+		for(var i = 1; i < config_rows.length; i++){ //Start with 1 to skip the funky first row encoding
+			if(config_rows[i].charAt(0) == ''){/*This skips empty lines*/}			
+			else if(config_rows[i].charAt(0) == '['){
 				var section_name = config_rows[i].replace(/[\[\]']+/g,'');
 				config_object[section_name] = {};
 				current_section = section_name;
 			}
-			else if(config_rows[i].charAt(0) == ''){/*This skips empty lines*/}
 			else{
 				var setting = config_rows[i].split("=");
 				var property = setting[0];

@@ -22,7 +22,7 @@ const fs3d_functions = {
 	//preloaded values
 	init:new Promise(function(resolve, reject){
 		if(settings.debug){console.log('Running FS3D Init...')};
-		var data = {
+		var result = {
 			settings:{
 				host:{server:null,ip:null,port:null,scenario:null,},
 				player:{name:null,callsign:null,role:null,aircraft:null}
@@ -31,10 +31,10 @@ const fs3d_functions = {
 			system:{cpu:null,memory:null,graphics:null,os:null}
 		}
 		Promise.all([io.getControlsFile, io.getConfigFile, profiler.init]).then((values) => {
-			data.controls = values[0];
-			data.p3d = values[1];
-			data.system = values[2];
-			this.fs3d = data;
+			result.data.controls = values[0];
+			result.data.p3d = values[1];
+			result.system = values[2];
+			this.fs3d = result;
 			resolve(this.fs3d);
 		});
 	}),
