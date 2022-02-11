@@ -48,7 +48,7 @@ app.on('ready', function(){
 	//Initialize FS3D Data Objects
 	fs3d_functions.init.then(function(data){
 		if(settings.debug){console.log('Creating App Window...')};
-
+		console.log(data);
 		//Create App Window
 		mainWindow = new BrowserWindow({
 			width:settings.width,
