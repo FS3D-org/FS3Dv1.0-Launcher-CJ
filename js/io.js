@@ -20,8 +20,6 @@ const io = {
 		if(settings.debug){console.log('Loading Controls File...')};
 		var file_rows = fs.readFileSync(process.env.APPDATA + settings.controls_file, {encoding:'utf8'}).split("\n");
 		for(row in file_rows){file_rows[row] = file_rows[row].trim().replace(/\r/g,'');} //Replace newlines
-
-		//Final resolved controls object
 		var controls = {
 			declaration:null,
 			root:null,
@@ -29,69 +27,41 @@ const io = {
 			Filename:'Custom.xml',
 			Sections:{}
 		};
-
 		var section_group = [];		//Temporary group for sections
 		var settings_group = {};	//Temporary group for settings
-
 		var num = 0;				//Section count
 		var section_name;			//Temporary section names
 		var type;					//Temporary type name
-
-
 		for(row in file_rows){
 			var line = file_rows[row];
-			
-			//Handle "header" info - most of this is passed through untouched as a string
 			if(line.includes('<?xml')){controls.declaration = line;}
 			else if(line.includes('<SimBase.Document')){controls.root = line.replace('Standard', 'Custom');} //Override id with Custom
-
-			//Assign file description
-			else if(line.includes('Descr')){
-				controls.Descr = line.replace('<Descr>', '').replace('</Descr>', '');
-			}
-
-			//Start a section
+			else if(line.includes('Descr')){controls.Descr = line.replace('<Descr>', '').replace('</Descr>', '');}
 			else if(line.includes('<SimControls.Map')){
 				section_group = [];//Empty temp files
 				section_name = '';
 			}
-
-			//Assign section name
-			else if(line.includes('<Name>')){
-				section_name = line.replace('<Name>', '').replace('</Name>', '');
-			}
-
-			//End a section
+			else if(line.includes('<Name>')){section_name = line.replace('<Name>', '').replace('</Name>', '');}
 			else if(line.includes('</SimControls.Map')){
 				controls.Sections[section_name] = section_group;
 				num++;
 			}
-
 			else if(line.includes('<Filename>') || line.includes('</Filename>') || line.includes('</SimBase.Document>')){} //Ignore useless tags
-
 			else if(line == ''){}//Skip empty lines.
-
-			//Loop through actual data
 			else{
-				
+				if(line.includes('<Entry>') || line.includes('<Axis>') || line.includes('<POV>')){settings_group = {};}
 				if(line.includes('<Entry>')){
 					type = "Entry";
-					settings_group = {};
 					settings_group[type] = {};
 				}
-
 				else if(line.includes('<Axis')){
 					type = "Axis";
-					settings_group = {};
 					settings_group[type] = {};
 				}
-
 				else if(line.includes('<POV>')){
 					type = "POV";
-					settings_group = {};
 					settings_group[type] = {};
 				}
-
 				else if(line.includes('</Entry') || line.includes('</Axis') || line.includes('</POV>')){section_group.push(settings_group);}
 
 				else{
@@ -105,11 +75,9 @@ const io = {
 					);
 					settings_group[type][setting] = value;
 				}
-
 			}
-
 		}
-		fs.writeFile('./Controls.json', JSON.stringify(controls, null, 4), function(){});
+		fs.writeFile('./Files/Controls.json', JSON.stringify(controls, null, 4), function(){});
 		resolve(controls);
 	}),
 
@@ -133,6 +101,7 @@ const io = {
 				config_object[current_section][property] = value.replace(/[\[\]']+/g,'').replace(/\r/g,'');
 			}
 		}
+		fs.writeFile('./Files/Config.json', JSON.stringify(config_object, null, 4), function(){})
 		resolve(config_object);
 	}),
 
@@ -157,13 +126,14 @@ const io = {
 				fs.writeFileSync(config, utf16buffer);		
 			});
 
-			resolve('test');
+			resolve();
 
 		});
 	},
 
 	writeControlsFile:function(controls_data){
 		var controls = process.env.APPDATA + settings.controls_file;
+		var custom_controls = process.env.APPDATA + settings.custom_controls_file;
 		return new Promise(function(resolve, reject){
 			var backup = new Promise(function(resolve, reject){
 				fs.copyFile(controls, controls +'.bak', function(){});
@@ -171,18 +141,34 @@ const io = {
 			});
 
 			backup.then(function(){
-				var config_string = '\r\n';
-				for(section in config_data){
-					config_string += '['+section+']\r\n'
-					for (const [key, value] of Object.entries(config_data[section])) {
-					  config_string += key+'='+value+"\r\n";
+				var output = '';
+				output += controls_data.declaration + '\r\n\r\n';
+				output += controls_data.root + '\r\n';
+				output += '\t<Descr>' + controls_data.Descr + '</Descr>' + '\r\n';
+				output += '\t<Filename>' + controls_data.Filename + '</Filename>' + '\r\n';
+				for(section in controls_data.Sections){
+					output += '\t<SimControls.Map>' + '\r\n';
+					output += '\t\t<Name>' + section + '</Name>' + '\r\n';
+
+					var section = controls_data.Sections[section];
+					for(var count = 0; count <= section.length; count++){
+						for(type in section[count]){
+							output += '\t\t<'+type+'>' + '\r\n';
+							for(setting in section[count][type]){
+								output += '\t\t\t<'+setting+'>' + section[count][type][setting] + '</'+setting+'>\r\n';
+							}
+							output += '\t\t</'+type+'>' + '\r\n';
+						}
 					}
+
+					output += '\t</SimControls.Map>' + '\r\n';
 				}
-				const utf16buffer = Buffer.from(`\ufeff${config_string}`, 'utf16le');
-				fs.writeFileSync(config, utf16buffer);		
+				output += '</Simbase.Document>\r\n';
+				//fs.writeFile('./sample.xml', output, function(){});
+				fs.writeFile(custom_controls, "\ufeff" + output, function(){});
 			});
 
-			resolve('test');
+			resolve();
 
 		});
 	},

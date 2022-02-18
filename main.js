@@ -52,12 +52,9 @@ app.on('ready', function(){
 
 		fs3d = result;
 		if(settings.debug){console.log('Creating App Window...')};
-
-
-		//console.log(fs3d.data.controls.SimBase.Document.SimControl.Map);
-		//io.writeControlsFile(fs3d.data.controls).then(function(){
-			//console.log('success');
-		//});
+		fs3d.data.controls.Sections["KEYBOARD_MAIN.Native"][1]['Entry'].Key = "J";
+		fs3d.data.controls.Sections["KEYBOARD_MAIN.Native"][92]['Entry'].Key = "F4";
+		io.writeControlsFile(fs3d.data.controls).then(function(){});
 
 		//Create App Window
 		mainWindow = new BrowserWindow({
