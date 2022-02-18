@@ -149,7 +149,6 @@ const io = {
 				for(section in controls_data.Sections){
 					output += '\t<SimControls.Map>' + '\r\n';
 					output += '\t\t<Name>' + section + '</Name>' + '\r\n';
-
 					var section = controls_data.Sections[section];
 					for(var count = 0; count <= section.length; count++){
 						for(type in section[count]){
@@ -160,7 +159,6 @@ const io = {
 							output += '\t\t</'+type+'>' + '\r\n';
 						}
 					}
-
 					output += '\t</SimControls.Map>' + '\r\n';
 				}
 				output += '</Simbase.Document>\r\n';
