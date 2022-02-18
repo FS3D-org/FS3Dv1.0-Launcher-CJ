@@ -11,29 +11,23 @@
 	and so on. Most UI functionality should 
 	be defined here for consistency.
 --------------------------------------*/
-const {electron, dialog} = require('electron');
+const {electron, BrowserWindow, dialog} = require('electron');
+const url = require('url');
+const path = require('path');
 var ui = {
 
 	//Functions dealing with windows
 	windows:{
 		
 		//Build help windows (separate popups)
-		helpWindow:function(windowName){
+		helpWindow:function(window_file){
 			newWindow = new BrowserWindow({
 				width:480,
 				height:480,
 				title:"About"
 			});
-			const wmaps = {
-				"aboutServersWindow":"about_servers.html",
-				"aboutRolesWindow":"about_roles.html",
-				"aboutAircraftWindow":"about_aircraft.html",
-				"aboutControlsWindow":"about_controls.html",
-				"aboutGraphicsWindow":"about_graphics.html",
-				"aboutFS3DWindow":"about_fs3d.html",
-			}
 			newWindow.loadURL(url.format({
-				pathname: path.join(__dirname, 'pages/', wmaps[windowName]),
+				pathname: path.join(__dirname, 'pages/', window_file),
 				protocol:"file:",
 				slashes: true
 			}));

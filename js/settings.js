@@ -8,7 +8,7 @@
 
 	NOTE: This is the main settings file
 	for the launcher. Anything that can be
-	changed here should not be changed 
+	changed here should NOT be changed 
 	elsewhere, as much of the functionality
 	depends on the settings object being
 	imported before anything else is.
@@ -17,10 +17,10 @@
 const settings = {
 	version:'0.1',
 	controls_file:'/Lockheed Martin/Prepar3D v4/Controls/Standard.xml',
-
+	custom_controls_file:'/Lockheed Martin/Prepar3D v4/Controls/FS3D.xml',
 	config_file:'/Lockheed Martin/Prepar3D v4/Prepar3D.cfg',
 	debug: true,
-	custom_menu: false,
+	custom_menu: true,
 	width:560,
 	height:800,
 	resizable:true,

@@ -31,6 +31,8 @@ let aboutControlsWindow;
 let aboutGraphicsWindow;
 let aboutFS3DWindow;
 
+var fs3d;
+
 //Run when app is ready
 app.on('ready', function(){
 
@@ -46,9 +48,17 @@ app.on('ready', function(){
 	splashWindow.center();
 
 	//Initialize FS3D Data Objects
-	fs3d_functions.init.then(function(data){
+	fs3d_functions.init.then(function(result){
+
+		fs3d = result;
 		if(settings.debug){console.log('Creating App Window...')};
-		console.log(data);
+
+
+		//console.log(fs3d.data.controls.SimBase.Document.SimControl.Map);
+		//io.writeControlsFile(fs3d.data.controls).then(function(){
+			//console.log('success');
+		//});
+
 		//Create App Window
 		mainWindow = new BrowserWindow({
 			width:settings.width,

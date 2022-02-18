@@ -7,6 +7,7 @@
 	Year:		2022
 
 --------------------------------------*/
+var ui = require('./ui.js');
 const menuTemplate = [
 	{
 		label:'File',
@@ -38,27 +39,27 @@ const menuTemplate = [
 		submenu:[
 			{
 				label: 'About Servers',
-				click(){createHelpWindow('aboutServersWindow');}
+				click(){ui.windows.helpWindow('about_server.html');}
 			},
 			{
 				label: 'About Roles',
-				click(){createHelpWindow('aboutRolesWindow');}
+				click(){ui.windows.helpWindow('about_roles.html');}
 			},
 			{
 				label: 'About Aircraft Config',
-				click(){createHelpWindow('aboutAircraftWindow');}
+				click(){ui.windows.helpWindow('about_aircraft.html');}
 			},			
 			{
 				label: 'About Controls',
-				click(){createHelpWindow('aboutControlsWindow');}
+				click(){ui.windows.helpWindow('about_controls.html');}
 			},
 			{
 				label: 'About Graphics',
-				click(){createHelpWindow('aboutGraphicsWindow');}
+				click(){ui.windows.helpWindow('about_graphics.html');}
 			},	
 			{
 				label: 'About FS3D',
-				click(){createHelpWindow('aboutFS3DWindow');}
+				click(){ui.windows.helpWindow('about_fs3d.html');}
 			},				
 		]
 	}	
