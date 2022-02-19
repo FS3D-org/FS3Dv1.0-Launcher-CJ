@@ -20,7 +20,7 @@ const settings = {
 	custom_controls_file:'/Lockheed Martin/Prepar3D v4/Controls/Custom.xml',
 	config_file:'/Lockheed Martin/Prepar3D v4/Prepar3D.cfg',
 	debug: true,
-	custom_menu: true,
+	custom_menu: false,
 	width:560,
 	height:800,
 	resizable:true,

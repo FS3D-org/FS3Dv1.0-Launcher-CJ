@@ -11,8 +11,6 @@ const settings = require('./settings.js');
 const fs3d = require('./fs3d.js');
 const os = require('os');
 const fs = require('fs');
-//const xml2js = require('xml2js');
-//const js2xmlparser = require('js2xmlparser');
 const io = {
 
 	//Get %APPDATA%/Roaming/Lockheed Martin/Prepar3d <version>/Controls/Standard.xml
@@ -63,7 +61,6 @@ const io = {
 					settings_group[type] = {};
 				}
 				else if(line.includes('</Entry') || line.includes('</Axis') || line.includes('</POV>')){section_group.push(settings_group);}
-
 				else{
 					var setting = line.slice(
 						line.indexOf('<') + 1,
@@ -113,19 +110,30 @@ const io = {
 				fs.copyFile(config, config +'.bak', function(){});
 				resolve();
 			});
-
 			backup.then(function(){
+				var defaults_file = fs.readFileSync('./js/defaults.json');
+				var defaults = JSON.parse(defaults_file);
 				var config_string = '\r\n';
 				for(section in config_data){
+
 					config_string += '['+section+']\r\n'
 					for (const [key, value] of Object.entries(config_data[section])) {
-					  config_string += key+'='+value+"\r\n";
+
+							if(false){
+								config_string += defaults.p3d.config[key]+'='+defaults.p3d.config[value]+"\r\n";
+							}
+							else{
+								console.log(key+"+"+value);
+								config_string += key+'='+value+"\r\n";
+							}
+					
 					}
+
 				}
+
 				const utf16buffer = Buffer.from(`\ufeff${config_string}`, 'utf16le');
 				fs.writeFileSync(config, utf16buffer);		
 			});
-
 			resolve();
 
 		});
