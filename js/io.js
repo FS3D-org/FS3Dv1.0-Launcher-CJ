@@ -102,7 +102,6 @@ const io = {
 		resolve(config_data);
 	}),
 
-
 	writeConfigFile:function(config_data){
 		var config = process.env.APPDATA + settings.config_file;
 		var config_default = process.env.APPDATA + settings.config_file_default;
@@ -164,7 +163,6 @@ const io = {
 					output += '\t</SimControls.Map>' + '\r\n';
 				}
 				output += '</Simbase.Document>\r\n';
-				//fs.writeFile('./sample.xml', output, function(){});
 				fs.writeFile(custom_controls, "\ufeff" + output, function(){});
 			});
 
