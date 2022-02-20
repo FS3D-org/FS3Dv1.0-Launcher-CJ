@@ -1,14 +1,21 @@
 {
-	"p3d":{
-		"config":{
-			"LabelDrawDistanceAir":100,
-			"LabelDrawDistanceGround":100,
+
+	"config":{
+		"AContain":{
+			"LabelDrawDistanceAir":42,
+			"LabelDrawDistanceGround":42,
 			"ShowLabelManufacturer":0,
 			"ShowLabelModel":0,
 			"ShowLabelAirlineAndFlightNumber":1,
 			"ShowLabelAirspeed":1,
-			"ShowLabelHeading":1,
+			"ShowLabelHeading":1
+		},
+		"USERINTERFACE":{
 			"TextSize":3
+		},
+		"SOUND":{
+			"SOUND":0
 		}
 	}
+
 }

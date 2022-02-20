@@ -81,56 +81,50 @@ const io = {
 	//Get %APPDATA%/Roaming/Lockheed Martin/Prepar3d v4/Prepar3d.cfg file		
 	getConfigFile: new Promise(function(resolve, reject){
 		if(settings.debug){console.log('Loading Prepar3d.cfg...')};
-		var config_object = {};
+		var config_data = {};
 		var config_rows = fs.readFileSync(process.env.APPDATA + settings.config_file,{encoding:'utf16le'}).split("\n");
 		var current_section = '';
 		for(var i = 1; i < config_rows.length; i++){ //Start with 1 to skip the funky first row encoding
 			if(config_rows[i].charAt(0) == ''){/*This skips empty lines*/}			
 			else if(config_rows[i].charAt(0) == '['){
 				var section_name = config_rows[i].replace(/[\[\]']+/g,'').replace(/\r/g,'');
-				config_object[section_name] = {};
+				config_data[section_name] = {};
 				current_section = section_name; //Reset current name to start a new section
 			}
 			else{
 				var setting = config_rows[i].split("=");
 				var property = setting[0];
 				var value = setting[1];
-				config_object[current_section][property] = value.replace(/[\[\]']+/g,'').replace(/\r/g,'');
+				config_data[current_section][property] = value.replace(/[\[\]']+/g,'').replace(/\r/g,'');
 			}
 		}
-		fs.writeFile('./Files/Config.json', JSON.stringify(config_object, null, 4), function(){})
-		resolve(config_object);
+		fs.writeFile('./Files/Config.json', JSON.stringify(config_data, null, 4), function(){})
+		resolve(config_data);
 	}),
 
 
 	writeConfigFile:function(config_data){
 		var config = process.env.APPDATA + settings.config_file;
+		var config_default = process.env.APPDATA + settings.config_file_default;
 		return new Promise(function(resolve, reject){
 			var backup = new Promise(function(resolve, reject){
-				fs.copyFile(config, config +'.bak', function(){});
-				resolve();
+				fs.copyFile(config, config +'.bak', function(){
+					fs.copyFile('./Files/default/Prepar3d.cfg', config, function(){resolve();});
+				});
 			});
 			backup.then(function(){
 				var defaults_file = fs.readFileSync('./js/defaults.json');
 				var defaults = JSON.parse(defaults_file);
 				var config_string = '\r\n';
 				for(section in config_data){
-
 					config_string += '['+section+']\r\n'
-					for (const [key, value] of Object.entries(config_data[section])) {
-
-							if(false){
-								config_string += defaults.p3d.config[key]+'='+defaults.p3d.config[value]+"\r\n";
-							}
-							else{
-								console.log(key+"+"+value);
-								config_string += key+'='+value+"\r\n";
-							}
-					
+					for (const [key, value] of Object.entries(config_data[section])){
+						if(defaults.config[section] !== undefined && defaults.config[section].hasOwnProperty(key)){
+							config_string += key+'='+defaults.config[section][key]+"\r\n";
+						}
+						else{config_string += key+'='+value+"\r\n";}
 					}
-
 				}
-
 				const utf16buffer = Buffer.from(`\ufeff${config_string}`, 'utf16le');
 				fs.writeFileSync(config, utf16buffer);		
 			});

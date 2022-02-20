@@ -19,6 +19,7 @@ const settings = {
 	controls_file:'/Lockheed Martin/Prepar3D v4/Controls/Standard.xml',
 	custom_controls_file:'/Lockheed Martin/Prepar3D v4/Controls/Custom.xml',
 	config_file:'/Lockheed Martin/Prepar3D v4/Prepar3D.cfg',
+	config_file_default:'./Files/default/Prepar3D.cfg',
 	debug: true,
 	custom_menu: false,
 	width:560,

@@ -825,6 +825,977 @@
                     "Down": "Avatar - Toggle Crouch"
                 }
             }
+        ],
+        "Mouse Yoke": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "AXIS_AILERONS_SET",
+                    "AxScale": "64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "AXIS_ELEVATOR_SET",
+                    "AxScale": "64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "0",
+                    "Down": "BRAKES",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "2",
+                    "Down": "SLEW_RESET"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "3",
+                    "Down": "FLAPS_INCR"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "4",
+                    "Down": "FLAPS_DECR"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "6",
+                    "Down": "THROTTLE_INCR"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "7",
+                    "Down": "THROTTLE_DECR"
+                }
+            }
+        ],
+        "Mouse Yoke SLEW": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "AXIS_SLEW_SIDEWAYS_SET",
+                    "AxScale": "100",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "AXIS_SLEW_AHEAD_SET",
+                    "AxScale": "100",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "0",
+                    "Down": "SLEW_RESET"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "2",
+                    "Down": "SLEW_FREEZE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "3",
+                    "Down": "SLEW_ALTIT_MINUS",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "4",
+                    "Down": "SLEW_ALTIT_PLUS",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "6",
+                    "Down": "SLEW_PITCH_DN_SLOW",
+                    "Up": "SLEW_FREEZE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "7",
+                    "Down": "SLEW_PITCH_UP_SLOW",
+                    "Up": "SLEW_FREEZE"
+                }
+            }
+        ],
+        "Mouse Yoke OBSERVE": [
+            {
+                "Entry": {
+                    "Index": "6",
+                    "Down": "OBSERVER_ZOOM_IN",
+                    "DownVal": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "7",
+                    "Down": "OBSERVER_ZOOM_OUT",
+                    "DownVal": "1"
+                }
+            }
+        ],
+        "Mouse Yoke SIMDIRECTOR": [],
+        "Mouse Yoke CINEMATOGRAPHER": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "EYEPOINT_MOVE_LATERAL",
+                    "AxScale": "64",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "EYEPOINT_MOVE_LONGITUDINAL",
+                    "AxScale": "-64",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "RzAxis",
+                    "Index": "5",
+                    "AxEvent": "EYEPOINT_MOVE_VERTICAL",
+                    "AxScale": "64",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "POV": {
+                    "Index": "0",
+                    "Down": "PAN_VIEW",
+                    "DownRpt": "1"
+                }
+            }
+        ],
+        "Mouse Look": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "AXIS_PAN_HEADING",
+                    "AxScale": "64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "AXIS_PAN_PITCH",
+                    "AxScale": "-64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "0",
+                    "Down": "VIEW_RESET"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "2",
+                    "Down": "EYEPOINT_RESET"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "3",
+                    "Down": "EYEPOINT_UP",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "4",
+                    "Down": "EYEPOINT_DOWN"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "6",
+                    "Down": "ZOOM_OUT"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "7",
+                    "Down": "ZOOM_IN"
+                }
+            }
+        ],
+        "Mouse Look SLEW": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "AXIS_PAN_HEADING",
+                    "AxScale": "64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "AXIS_PAN_PITCH",
+                    "AxScale": "-64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "0",
+                    "Down": "SLEW_RESET"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "2",
+                    "Down": "SLEW_FREEZE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "3",
+                    "Down": "SLEW_ALTIT_MINUS",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "4",
+                    "Down": "SLEW_ALTIT_PLUS",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "6",
+                    "Down": "SLEW_PITCH_DN_SLOW",
+                    "Up": "SLEW_FREEZE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "7",
+                    "Down": "SLEW_PITCH_UP_SLOW",
+                    "Up": "SLEW_FREEZE"
+                }
+            }
+        ],
+        "Mouse Look OBSERVE": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "AXIS_OBSERVER_YAW",
+                    "AxScale": "64",
+                    "AxNull": "4"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "AXIS_OBSERVER_PITCH",
+                    "AxScale": "32",
+                    "AxNull": "4"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "6",
+                    "Down": "OBSERVER_ZOOM_IN",
+                    "DownVal": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "7",
+                    "Down": "OBSERVER_ZOOM_OUT",
+                    "DownVal": "1"
+                }
+            }
+        ],
+        "Mouse Look SIMDIRECTOR": [],
+        "Mouse Look CINEMATOGRAPHER": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "AXIS_PAN_HEADING",
+                    "AxScale": "64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "AXIS_PAN_PITCH",
+                    "AxScale": "-64",
+                    "AxNull": "36"
+                }
+            }
+        ],
+        "Xbox 360 Controller": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "AXIS_AILERONS_SET",
+                    "AxScale": "64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "AXIS_ELEVATOR_SET",
+                    "AxScale": "-64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "ZAxis",
+                    "Index": "2",
+                    "AxEvent": "AXIS_RUDDER_SET",
+                    "AxScale": "64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "RxAxis",
+                    "Index": "3",
+                    "AxEvent": "AXIS_PAN_HEADING",
+                    "AxScale": "16",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "RyAxis",
+                    "Index": "4",
+                    "AxEvent": "AXIS_PAN_PITCH",
+                    "AxScale": "-16",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "0",
+                    "Down": "BRAKES",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "1",
+                    "Down": "DECREASE_THROTTLE",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "2",
+                    "Down": "RELEASE_DROPPABLE_OBJECTS"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "3",
+                    "Down": "INCREASE_THROTTLE",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "4",
+                    "Down": "POINT_OF_INTEREST_TOGGLE_POINTER"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "5",
+                    "Down": "POINT_OF_INTEREST_CYCLE_NEXT"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "6",
+                    "Down": "MP_VOICE_CAPTURE_START",
+                    "Up": "MP_VOICE_CAPTURE_STOP"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "7",
+                    "Down": "GEAR_TOGGLE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "8",
+                    "Down": "PAUSE_TOGGLE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "9",
+                    "Down": "USER_INTERRUPT"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "10",
+                    "Down": "ELEV_TRIM_DN"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "11",
+                    "Down": "ELEV_TRIM_UP"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "12",
+                    "Down": "FLAPS_DECR"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "13",
+                    "Down": "FLAPS_INCR"
+                }
+            }
+        ],
+        "Xbox 360 Controller SLEW": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "AXIS_SLEW_SIDEWAYS_SET",
+                    "AxScale": "32",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "AXIS_SLEW_AHEAD_SET",
+                    "AxScale": "-32",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "ZAxis",
+                    "Index": "2",
+                    "AxEvent": "AXIS_SLEW_ALT_SET",
+                    "AxScale": "64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "RxAxis",
+                    "Index": "3",
+                    "AxEvent": "AXIS_SLEW_HEADING_SET",
+                    "AxScale": "32",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "RyAxis",
+                    "Index": "4",
+                    "AxEvent": "AXIS_SLEW_PITCH_SET",
+                    "AxScale": "32",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "0",
+                    "Down": "MINUS"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "1",
+                    "Down": "PLUS"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "2",
+                    "Down": "SLEW_BANK_MINUS",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "3",
+                    "Down": "SLEW_BANK_PLUS",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "4",
+                    "Down": "SLEW_FREEZE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "5",
+                    "Down": "SLEW_RESET"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "6",
+                    "Down": "SLEW_FREEZE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "7",
+                    "Down": "VIEW_MODE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "8",
+                    "Down": "PAUSE_TOGGLE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "9",
+                    "Down": "SLEW_TOGGLE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "10",
+                    "Down": "VIEW_FORWARD",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "11",
+                    "Down": "VIEW_REAR",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "12",
+                    "Down": "VIEW_LEFT",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "13",
+                    "Down": "VIEW_RIGHT",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "14",
+                    "Down": "VIEW_FORWARD_LEFT",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "15",
+                    "Down": "VIEW_FORWARD_RIGHT",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "16",
+                    "Down": "VIEW_REAR_LEFT",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "17",
+                    "Down": "VIEW_REAR_RIGHT",
+                    "DownRpt": "1"
+                }
+            }
+        ],
+        "Xbox 360 Controller OBSERVE": [],
+        "Xbox 360 Controller SIMDIRECTOR": [],
+        "Xbox 360 Controller CINEMATOGRAPHER": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "EYEPOINT_MOVE_LATERAL",
+                    "AxScale": "64",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "EYEPOINT_MOVE_LONGITUDINAL",
+                    "AxScale": "64",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "ZAxis",
+                    "Index": "2",
+                    "AxEvent": "EYEPOINT_MOVE_VERTICAL",
+                    "AxScale": "64",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "RxAxis",
+                    "Index": "3",
+                    "AxEvent": "AXIS_ADJUST_HEADING",
+                    "AxScale": "64",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "RyAxis",
+                    "Index": "4",
+                    "AxEvent": "AXIS_ADJUST_PITCH",
+                    "AxScale": "-64",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "1",
+                    "Down": "MINUS",
+                    "DownRpt": "2"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "3",
+                    "Down": "PLUS",
+                    "DownRpt": "2"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "4",
+                    "Down": "SMOOTH_EYEPOINT_RESET"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "5",
+                    "Down": "SMOOTH_VIEW_ORIENTATION_RESET"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "8",
+                    "Down": "PAUSE_TOGGLE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "9",
+                    "Down": "CINEMATOGRAPHER_TOGGLE"
+                }
+            }
+        ],
+        "Extreme 3D pro {C215046D-5711-0001-1853-B14FE92FAAAA}": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "AXIS_AILERONS_SET",
+                    "AxScale": "64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "AXIS_ELEVATOR_SET",
+                    "AxScale": "64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "RzAxis",
+                    "Index": "5",
+                    "AxEvent": "AXIS_RUDDER_SET",
+                    "AxScale": "64",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "Slider",
+                    "Index": "6",
+                    "AxEvent": "AXIS_THROTTLE_SET",
+                    "AxScale": "127",
+                    "AxNull": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "0",
+                    "Down": "BRAKES",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "1",
+                    "Down": "VIEW_MODE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "2",
+                    "Down": "ELEV_TRIM_DN",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "3",
+                    "Down": "ELEV_TRIM_UP",
+                    "DownRpt": "1"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "4",
+                    "Down": "FLAPS_INCR"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "5",
+                    "Down": "FLAPS_DECR"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "6",
+                    "Down": "RELEASE_DROPPABLE_OBJECTS"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "7",
+                    "Down": "GEAR_TOGGLE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "8",
+                    "Down": "VIEW_MODE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "9",
+                    "Down": "GEAR_TOGGLE"
+                }
+            },
+            {
+                "POV": {
+                    "Index": "0",
+                    "Down": "PAN_VIEW",
+                    "DownRpt": "1"
+                }
+            }
+        ],
+        "Extreme 3D pro SLEW {C215046D-5711-0001-1853-B14FE92FAAAA}": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "AXIS_SLEW_SIDEWAYS_SET",
+                    "AxScale": "100",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "AXIS_SLEW_AHEAD_SET",
+                    "AxScale": "100",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "RzAxis",
+                    "Index": "5",
+                    "AxEvent": "AXIS_SLEW_HEADING_SET",
+                    "AxScale": "100",
+                    "AxNull": "36"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "0",
+                    "Down": "SLEW_RESET"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "1",
+                    "Down": "VIEW_MODE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "2",
+                    "Down": "SLEW_ALTIT_PLUS"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "3",
+                    "Down": "SLEW_ALTIT_MINUS"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "4",
+                    "Down": "SLEW_PITCH_PLUS"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "5",
+                    "Down": "SLEW_PITCH_MINUS"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "6",
+                    "Down": "SLEW_BANK_MINUS"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "7",
+                    "Down": "SLEW_BANK_PLUS"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "8",
+                    "Down": "SLEW_FREEZE"
+                }
+            },
+            {
+                "Entry": {
+                    "Index": "9",
+                    "Down": "SLEW_RESET"
+                }
+            },
+            {
+                "POV": {
+                    "Index": "0",
+                    "Down": "PAN_VIEW",
+                    "DownRpt": "1"
+                }
+            }
+        ],
+        "Extreme 3D pro OBSERVE {C215046D-5711-0001-1853-B14FE92FAAAA}": [],
+        "Extreme 3D pro SIMDIRECTOR {C215046D-5711-0001-1853-B14FE92FAAAA}": [],
+        "Extreme 3D pro CINEMATOGRAPHER {C215046D-5711-0001-1853-B14FE92FAAAA}": [
+            {
+                "Axis": {
+                    "AxName": "XAxis",
+                    "Index": "0",
+                    "AxEvent": "EYEPOINT_MOVE_LATERAL",
+                    "AxScale": "64",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "YAxis",
+                    "Index": "1",
+                    "AxEvent": "EYEPOINT_MOVE_LONGITUDINAL",
+                    "AxScale": "-64",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "Axis": {
+                    "AxName": "RzAxis",
+                    "Index": "5",
+                    "AxEvent": "EYEPOINT_MOVE_VERTICAL",
+                    "AxScale": "64",
+                    "AxNull": "64"
+                }
+            },
+            {
+                "POV": {
+                    "Index": "0",
+                    "Down": "PAN_VIEW",
+                    "DownRpt": "1"
+                }
+            }
         ]
     }
 }
