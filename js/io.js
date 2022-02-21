@@ -140,7 +140,6 @@ const io = {
 				fs.copyFile(controls, controls +'.bak', function(){});
 				resolve();
 			});
-
 			backup.then(function(){
 				var output = '';
 				output += controls_data.declaration + '\r\n\r\n';

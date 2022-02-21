@@ -16,6 +16,16 @@
 		"SOUND":{
 			"SOUND":0
 		}
+	},
+
+	"controls":{
+		"KEYBOARD_MAIN.Native":{
+			"Entry":{
+				"Key":"F",
+				"DOWN":"DME"
+			}
+		}
+
 	}
 
 }

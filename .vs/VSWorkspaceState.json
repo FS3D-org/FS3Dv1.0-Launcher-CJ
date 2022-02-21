@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\css",
+    "\\files",
+    "\\files\\default",
     "\\js",
-    "\\pages",
-    "\\pages\\help",
     "\\videos"
   ],
+  "SelectedNode": "\\system_profiler",
   "PreviewInSolutionExplorer": false
 }
