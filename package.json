@@ -11,7 +11,8 @@
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.63",
-    "electron": "^16.0.2"
+    "electron": "^16.0.2",
+    "ws": "^8.5.0"
   },
   "license": "ISC",
   "dependencies": {
@@ -23,6 +24,7 @@
     "replace-in-file": "^6.3.2",
     "shelljs": "^0.8.5",
     "systeminformation": "^5.11.2",
+    "uuid": "^8.3.2",
     "xml-js": "^1.6.11",
     "xml2js": "^0.4.23"
   }

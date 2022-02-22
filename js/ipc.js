@@ -33,8 +33,8 @@ ipcMain.handle('getData', async (event, options) => {
 //Set the state of a value on the persistent FS3D object
 ipcMain.handle('setData', async (event, options) => {
 	for(entry in options){
-		if(settings.debug){console.log('Set data "'+entry+'" to '+options[entry])};
 		entry = options[entry];
 		fs3d.settings[entry.setting][entry.target] = entry.value;
+		if(settings.debug){console.log('Set data "'+entry.target+'" to '+entry.value)};
 	}
 });

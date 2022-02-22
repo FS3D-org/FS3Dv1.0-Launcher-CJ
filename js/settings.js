@@ -20,6 +20,8 @@ const settings = {
 	custom_controls_file:'/Lockheed Martin/Prepar3D v4/Controls/Custom.xml',
 	config_file:'/Lockheed Martin/Prepar3D v4/Prepar3D.cfg',
 	config_file_default:'./Files/default/Prepar3D.cfg',
+	vpn_server:'ws://10.8.0.10:1294',
+	remote_server:'ws://158.51.40.88:1294',
 	debug: true,
 	custom_menu: false,
 	width:560,

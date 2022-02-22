@@ -7,3 +7,19 @@
 	Year:		2022
 
 --------------------------------------*/
+
+#server_status{
+	height:70px;
+}
+
+#p3d_status{
+	height:70px;
+}
+
+#server_details{
+	height:180px;
+}
+
+#player_details{
+	height:200px;
+}

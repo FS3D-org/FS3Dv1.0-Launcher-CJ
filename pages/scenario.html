@@ -32,10 +32,22 @@
 			<a href="comms.html"><div class="navbutton"><div>Comms</div></div></a>
 		</div>
 	
-		<div class="section">
+		<div class="section" id="server_status">
+			<div class="section_header">SERVER STATUS</div>
+		</div>
+
+		<div class="section" id="p3d_status">
+			<div class="section_header">PREPAR3D VERSION</div>
+			<label for="version" class="field_label">Prepar3d Version</label>
+			<select id="version" class="dropdown input_enabled">
+				<option selected>Please Choose A Version</option>
+				<option>Prepar3d V4.4</option>
+				<option>Prepar3d V5</option>
+			</select>
+		</div>
+
+		<div class="section" id="server_details">
 			<div class="section_header">SERVER</div>
-			<label for="server_status" class="field_label">Server Status:</label>
-			<div id="server_status"></div>
 			<label for="server" class="field_label">Choose Server</label>
 			<select id="server" class="dropdown input_enabled">
 				<option selected>Please Select A Server</option>
@@ -58,7 +70,7 @@
 			<br />
 			<br />
 		</div>
-		<div class="section">
+		<div class="section" id="player_details">
 			<div class="section_header">PLAYER</div>
 			<label for="name" class="field_label">Player Name</label>
 			<input type="text" id="name" class="field" value="" disabled/>
