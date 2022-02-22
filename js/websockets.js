@@ -11,6 +11,10 @@ const {WebSocket} = require('ws');
 const settings = require('./settings.js');
 const websockets = {
 
+	data:{
+		connected:false;
+	},
+
 	init: function(){	
 
 		const {WebSocket} = require('ws');
@@ -23,11 +27,21 @@ const websockets = {
 			}
 			ws.send(JSON.stringify(initData));
 			console.log('response:'+response);
+			websockets.data.connected = true;
 		});
 		ws.on('message', function message(data) {
 			console.log('received: %s', data);
 		});
 	
+	},
+
+	connectionTest:function(response){
+		if(websockets.data.connected){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 }
 

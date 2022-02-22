@@ -5,8 +5,9 @@
     "\\files",
     "\\files\\default",
     "\\js",
+    "\\pages",
     "\\videos"
   ],
-  "SelectedNode": "\\system_profiler",
+  "SelectedNode": "\\js\\ipc.js",
   "PreviewInSolutionExplorer": false
 }
