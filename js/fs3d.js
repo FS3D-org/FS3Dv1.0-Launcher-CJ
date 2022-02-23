@@ -30,7 +30,14 @@ const fs3d_functions = {
 				player:{name:null,callsign:null,role:null,aircraft:null}
 			},
 			data:{
-				fs3d:{},
+				fs3d:{
+					uuid:null,
+					scenarios:null,
+					aircraft:null,
+					players:null,
+					flightplan:null,
+					weather:null
+				},
 				p3d:null,
 				controls:null
 			},
@@ -42,7 +49,6 @@ const fs3d_functions = {
 			result.system = values[2];
 			result.data.fs3d.uuid = uuidv4();
 			this.fs3d = result;
-			websockets.init();
 			resolve(this.fs3d);
 		});
 	})	

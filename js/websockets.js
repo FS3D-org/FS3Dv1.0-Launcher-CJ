@@ -7,41 +7,44 @@
 	Year:		2022
 
 --------------------------------------*/
-const {WebSocket} = require('ws');
 const settings = require('./settings.js');
-const websockets = {
 
-	data:{
-		connected:false;
-	},
+const websockets = {
 
 	init: function(){	
 
 		const {WebSocket} = require('ws');
-		const ws = new WebSocket(settings.vpn_server);
+		const ws = new WebSocket(settings.remote_server);
 
-		ws.on('open', function open(response) {
+		ws.on('open', function() {
 			var initData = {
-				"type":"p3d_ui_request",
+				"type":"P3D_UI",
 				"UUID":fs3d.data.fs3d.uuid
 			}
 			ws.send(JSON.stringify(initData));
-			console.log('response:'+response);
-			websockets.data.connected = true;
-		});
-		ws.on('message', function message(data) {
-			console.log('received: %s', data);
-		});
-	
-	},
 
-	connectionTest:function(response){
-		if(websockets.data.connected){
-			return true;
-		}
-		else{
-			return false;
-		}
+		});
+
+		ws.on('message', function message(data) {
+			switch(data.type){
+
+				//Get aircraft data at loading
+				case 'aircraft_list':
+					fs3d.
+
+				break;
+
+
+			}
+
+
+
+		});
+		
+		ws.on('error', (error) => {
+		  console.log(error);
+		})
+	
 	}
 }
 

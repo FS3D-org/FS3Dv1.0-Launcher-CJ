@@ -19,6 +19,7 @@ const fs3d_functions = require('./js/fs3d.js');
 const controls = require('./js/controls.js');
 const io = require('./js/io.js');
 const ipc = require('./js/ipc.js');
+const websockets = require('./js/websockets.js');
 
 /*Electron setup*/
 const {app, BrowserWindow, Menu, ipcMain} = electron;
@@ -52,6 +53,7 @@ app.on('ready', function(){
 	fs3d_functions.init.then(function(result){
 
 		fs3d = result;
+		websockets.init();
 		//console.log(fs3d.data);
 		if(settings.debug){console.log('Creating App Window...')};
 		//fs3d.data.controls.Sections["KEYBOARD_MAIN.Native"][1]['Entry'].Key = "J";
