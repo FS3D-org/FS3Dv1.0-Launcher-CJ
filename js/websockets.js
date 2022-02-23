@@ -28,12 +28,10 @@ const websockets = {
 
 		ws.on('message', function message(data){
 			var result = JSON.parse(data);
-			
-			//Handle aircraft options
+			console.log(result);
 			if(result.type == 'aircraft_list'){
 				var aircraft = [];
 				result.data.forEach((craft) => {
-					console.log(craft);
 					var details = {};
 					details.aircraft_type = craft[1],
 					details.category = craft[2],
@@ -59,21 +57,44 @@ const websockets = {
 				});
 				program.data.fs3d.aircraft = aircraft;			
 			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			else if(result.type == 'aircraft_list'){
-				//fs3d.data.fs3d.aircraft				
+			else if(result.type == 'waypoints'){
+				var waypoints = [];
+				result.waypoints.forEach((point) => {
+					var waypoint = {
+						scenario_id:point[1],
+						scenario_type:point[2],
+						id:point[3],
+						description:point[4],
+						lat_n_s:point[5],
+						lat_deg:point[6],
+						lat_min:point[7],
+						lat_sec:point[8],
+						lon_e_w:point[9],
+						lon_deg:point[10],
+						lon_min:point[11],
+						lon_sec:point[12],
+						alt_ft:point[13],
+						is_departure:point[14],
+						is_destination:point[15]					
+					};
+					waypoints.push(waypoint);
+				});
+				program.data.fs3d.scenarios = result.scenario_name;
+				program.data.fs3d.departure_icao = result.departure_icao;
+				program.data.fs3d.waypoints = waypoints;	
+				console.log(program.data.fs3d);
 			}
-			else if(result.type == 'aircraft_list'){
-				//fs3d.data.fs3d.aircraft				
+			else if(result.type == 'weather'){
+				var weather = {
+					temp_f:result.temp_f,
+					wind_speed_kts:result.wind_speed_kts,
+					wind_gust_kts:result.wind_gust_kts,
+					wind_dir_deg:result.wind_dir_deg,
+					time:result.time,
+					visibility_sm:result.visibility_sm,
+					field_elevation_ft:result.field_elevation_ft[0][0]
+				};
+				program.data.fs3d.weather = weather;
 			}
 		});
 		

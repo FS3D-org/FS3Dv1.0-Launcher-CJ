@@ -54,6 +54,7 @@ app.on('ready', function(){
 
 		program = result;
 		websockets.init();
+		console.log(program);
 		if(settings.debug){console.log('Creating App Window...')};
 
 

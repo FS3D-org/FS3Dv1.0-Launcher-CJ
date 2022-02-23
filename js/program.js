@@ -35,7 +35,7 @@ const program_functions = {
 					scenarios:null,
 					aircraft:null,
 					players:null,
-					flightplan:null,
+					waypoints:null,
 					weather:null
 				},
 				p3d:null,
