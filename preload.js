@@ -15,9 +15,9 @@
    on ipcRenderer and contextBridge in the docs.
 */
 const {contextBridge, ipcRenderer} = require('electron');
-const fs3d = require('./js/fs3d.js');
+const program = require('./js/program.js');
 
-contextBridge.exposeInMainWorld('FS3D', {
+contextBridge.exposeInMainWorld('PROGRAM', {
 	getData: () => ipcRenderer.invoke('getData'),
 	setData: (options) => ipcRenderer.invoke('setData', options),
 	showWarning: (options) => ipcRenderer.invoke('showWarning', options)

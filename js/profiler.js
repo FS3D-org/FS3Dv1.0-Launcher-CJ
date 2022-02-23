@@ -8,7 +8,7 @@
 
 --------------------------------------*/
 const settings = require('./settings.js');
-const fs3d = require('./fs3d.js');
+const program = require('./program.js');
 const sysinfo = require('systeminformation');
 const profiler = {
 
@@ -33,7 +33,7 @@ const profiler = {
             var displayMax = gcDisplay.reduce(function(a, b){return Math.max(a, b);},-Infinity);
             var display = graphics.displays[gcDisplay.indexOf(displayMax)];
 
-            //Set up output object to be assign to master fs3d object
+            //Set up output object to be assign to master program object
             output.cpu = {
                 manufacturer:cpu.manufacturer,
                 brand:cpu.brand,

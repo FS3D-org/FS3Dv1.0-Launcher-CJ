@@ -16,9 +16,9 @@ const profiler = require('./profiler.js');
 const websockets = require('./websockets.js');
 const {v4: uuidv4} = require('uuid');
 
-const fs3d_functions = {
+const program_functions = {
 
-	fs3d:null,
+	program:null,
 
 	//Initialize the persistent FS3D object with default and
 	//preloaded values
@@ -48,10 +48,10 @@ const fs3d_functions = {
 			result.data.p3d = values[1];
 			result.system = values[2];
 			result.data.fs3d.uuid = uuidv4();
-			this.fs3d = result;
-			resolve(this.fs3d);
+			this.program = result;
+			resolve(this.program);
 		});
 	})	
 }
 
-module.exports = fs3d_functions;
+module.exports = program_functions;

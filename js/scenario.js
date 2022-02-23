@@ -16,7 +16,7 @@
 --------------------------------------*/
 
 //Update fields if data has already been set (ie switching tabs)
-var fs3d_settings = window.FS3D.getData().then(function(data){
+var fs3d_settings = window.PROGRAM.getData().then(function(data){
 	var server = document.getElementById("server");
 	var ip = document.getElementById("ip");
 	var port = document.getElementById("port");

@@ -17,7 +17,7 @@
 --------------------------------------*/
 const settings = require('./settings.js');
 const {ipcMain, dialog} = require('electron');
-const fs3d_functions = require('./fs3d.js');
+const program_functions = require('./program.js');
 const ui = require('./ui.js');
 
 //Show a dynamically-created warning window
@@ -27,14 +27,14 @@ ipcMain.handle('showWarning', async (event, options) => {
 
 //Get the state of the values on the persistent FS3D object
 ipcMain.handle('getData', async (event, options) => {
-	return fs3d;
+	return program;
 });
 
 //Set the state of a value on the persistent FS3D object
 ipcMain.handle('setData', async (event, options) => {
 	for(entry in options){
 		entry = options[entry];
-		fs3d.settings[entry.setting][entry.target] = entry.value;
+		program.settings[entry.setting][entry.target] = entry.value;
 		if(settings.debug){console.log('Set data "'+entry.target+'" to '+entry.value)};
 	}
 });

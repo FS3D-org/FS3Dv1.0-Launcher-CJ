@@ -15,7 +15,7 @@ const path = require('path');
 const settings = require('./js/settings.js');
 const ui = require('./js/ui.js');
 const menu = require('./js/menu.js');
-const fs3d_functions = require('./js/fs3d.js');
+const program_functions = require('./js/program.js');
 const controls = require('./js/controls.js');
 const io = require('./js/io.js');
 const ipc = require('./js/ipc.js');
@@ -33,7 +33,7 @@ let aboutControlsWindow;
 let aboutGraphicsWindow;
 let aboutFS3DWindow;
 
-var fs3d;
+var program;
 
 //Run when app is ready
 app.on('ready', function(){
@@ -50,17 +50,12 @@ app.on('ready', function(){
 	splashWindow.center();
 
 	//Initialize FS3D Data Objects
-	fs3d_functions.init.then(function(result){
+	program_functions.init.then(function(result){
 
-		fs3d = result;
+		program = result;
 		websockets.init();
-		//console.log(fs3d.data);
 		if(settings.debug){console.log('Creating App Window...')};
-		//fs3d.data.controls.Sections["KEYBOARD_MAIN.Native"][1]['Entry'].Key = "J";
-		//fs3d.data.controls.Sections["KEYBOARD_MAIN.Native"][92]['Entry'].Key = "F4";
-		//io.writeControlsFile(fs3d.data.controls).then(function(){});
-		//io.writeConfigFile(result.data.p3d);
-		//fs.writeFile('./system_profiler', JSON.stringify(result), function(){})
+
 
 		//Create App Window
 		mainWindow = new BrowserWindow({
